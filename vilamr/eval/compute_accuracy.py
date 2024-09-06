@@ -42,10 +42,6 @@ def main(args):
                 pred = predictions[question_id]
                 pred_response = pred['response']
 
-            # TODO: llama3的stop_str的问题
-            if len(pred_response.split('assistant\n')) > 1:
-                pred_response = pred_response.split('assistant\n')[0].strip()
-
             # FIXME: extracting answer from generated cot
             responses = pred_response.split("ANSWER:")
             if len(responses) >= 2:
