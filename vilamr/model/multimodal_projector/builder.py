@@ -54,16 +54,6 @@ def build_vision_projector(config, delay_load=False, **kwargs):
             hidden_size=config.hidden_size,
             num_register_tokens=config.mm_num_register_tokens
         )
-    elif projector_type == "gate_mm_aligner":
-        return GateMMAligner(
-            hidden_size=config.hidden_size,
-            num_register_tokens=config.mm_num_register_tokens
-        )
-    elif projector_type == "mm_aligner":
-        return MMAligner(
-            hidden_size=config.hidden_size,
-            num_register_tokens=config.mm_num_register_tokens
-        )
     elif projector_type == 'identity':
         return IdentityMap()
     else:
