@@ -19,10 +19,10 @@
 > [!NOTE]
 > We provide the following trained weights of **ViLamr <mark>w/o RPE</mark>** for versatility:
 
-| ViLamr Weights                                                                      | LLM                  | VL-Connector                                                                         | Vision Encoder                               | MMStar |   MMMU-v | RWQA |   MMB-d | GD-VCR | GeoQA | WeMath | M3CoT (ZS) |
-|:------------------------------------------------------------------------------------| :------------------- |:-------------------------------------------------------------------------------------|:---------------------------------------------|-------:|---------:|-----:|--------:|-------:|------:|-------:|-----------:|
-| ViLamr-Vicuna-13B [[🤗 HF](https://huggingface.co/JingjingJiang/vilamr-vicuna-13b)] | Vicuna-13b-v1.5      | GateMixer [[🤗 HF](https://huggingface.co/JingjingJiang/vilamr-vicuna-13b-pretrain)] | <li> CLIP-L-336px <li> CLIP-ConvNeXt-XXLarge |   43.0 |     42.3 | 62.2 |    76.0 |   87.9 |  64.8 |   32.2 |       45.2 |
-| ViLamr-Llama3-8B [[🤗 HF](https://huggingface.co/JingjingJiang/vilamr-llama3-8b)]   | Llama3.1-8B-Instruct | GateMixer [[🤗 HF](https://huggingface.co/JingjingJiang/vilamr-llama3-8b-pretrain)]  | <li> CLIP-L-336px <li> CLIP-ConvNeXt-XXLarge |   43.5 |     41.4 | 60.1 |    75.3 |   87.0 |  70.8 |   33.0 |       44.0 |
+| ViLamr Weights                                                                      | LLM                  | Connector                                                                         | VE                                        | MMStar |   MMMU-v | RWQA |   MMB-d | GD-VCR | GeoQA | WeMath | M3CoT (ZS) |
+|:------------------------------------------------------------------------------------| :------------------- |:-------------------------------------------------------------------------------------|:------------------------------------------|-------:|---------:|-----:|--------:|-------:|------:|-------:|-----------:|
+| ViLamr-Vicuna-13B [[🤗 HF](https://huggingface.co/JingjingJiang/vilamr-vicuna-13b)] | Vicuna-13b-v1.5      | GateMixer [[🤗 HF](https://huggingface.co/JingjingJiang/vilamr-vicuna-13b-pretrain)] | <li> CLIP-ViT-L/14 <li> CLIP-ConvNeXt-XXL |   43.0 |     42.3 | 62.2 |    76.0 |   87.9 |  64.8 |   32.2 |       45.2 |
+| ViLamr-Llama3-8B [[🤗 HF](https://huggingface.co/JingjingJiang/vilamr-llama3-8b)]   | Llama3.1-8B-Instruct | GateMixer [[🤗 HF](https://huggingface.co/JingjingJiang/vilamr-llama3-8b-pretrain)]  | <li> CLIP-ViT-L/14 <li> CLIP-ConvNeXt-XXL  |   43.5 |     41.4 | 60.1 |    75.3 |   87.0 |  70.8 |   33.0 |       44.0 |
 
 ---
 
@@ -49,7 +49,7 @@ ViLamr is trained using a two-stage strategy on 8 A800 GPUs with 80GB memory.
 
 - [Vicuna-13b-v1.5](https://huggingface.co/lmsys/vicuna-13b-v1.5)
 - [Llama3.1-8B-Instruct](https://huggingface.co/meta-llama/Meta-Llama-3.1-8B-Instruct)
-- [CLIP-L-336px](https://huggingface.co/openai/clip-vit-large-patch14-336)
+- [CLIP-ViT-L/14-336px](https://huggingface.co/openai/clip-vit-large-patch14-336)
 - [CLIP-ConvNeXt-XXLarge](https://huggingface.co/laion/CLIP-convnext_xxlarge-laion2B-s34B-b82K-augreg-soup)
 
 ### Stage I: Vision-Language Alignment Pretraining
@@ -145,3 +145,4 @@ scripts/acc_calculate.sh
 
 [//]: #
 [//]: #
+
