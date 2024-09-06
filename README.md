@@ -1,5 +1,5 @@
 <div align="center">
-<h1> :hear_no_evil: ViLamr</h1> 
+<h1>:hear_no_evil: ViLamr :hear_no_evil:</h1> 
 <h2>MLLMs towards Chain-of-Thought Reasoning</h2> 
 
 [//]: # (> [[Paper]&#40;&#41;] [[📝 Project Page]&#40;https://mm-vl.github.io/vilamr/&#41;] )
