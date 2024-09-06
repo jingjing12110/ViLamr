@@ -1,7 +1,11 @@
-# :hear_no_evil: ViLamr: MLLMs towards Chain-of-Thought Reasoning
+<div align="center">
+<h1> :hear_no_evil: ViLamr</h1> 
+<h2>MLLMs towards Chain-of-Thought Reasoning</h2> 
 
 [//]: # (> [[Paper]&#40;&#41;] [[📝 Project Page]&#40;https://mm-vl.github.io/vilamr/&#41;] )
 > [[🤗 Data](https://huggingface.co/datasets/JingjingJiang/MCoT-Instruct-266K)] [[🤗 Model Zoo](https://huggingface.co/collections/JingjingJiang/vilamr-66d02b6b74809ac0b6b09675)]
+</div>
+
 
 ## 📢 Latest Updates
 
@@ -15,10 +19,10 @@
 > [!NOTE]
 > We provide the following trained weights of **ViLamr <mark>w/o RPE</mark>** for versatility:
 
-| ViLamr Weights                                                                      | LLM                  | VL-Connector                                                                         | Vision Encoder                               | MMStar | MMMU-val | RWQA | MMB-dev | GD-VCR | GeoQA | WeMath | M$^3$CoT (ZS) |
-|:------------------------------------------------------------------------------------| :------------------- |:-------------------------------------------------------------------------------------|:---------------------------------------------|-------:|---------:|-----:|--------:|-------:|------:|-------:|--------------:|
-| ViLamr-Vicuna-13B [[🤗 HF](https://huggingface.co/JingjingJiang/vilamr-vicuna-13b)] | Vicuna-13b-v1.5      | GateMixer [[🤗 HF](https://huggingface.co/JingjingJiang/vilamr-vicuna-13b-pretrain)] | <li> CLIP-L-336px <li> CLIP-ConvNeXt-XXLarge |   43.0 |     42.3 | 62.2 |    76.0 |   87.9 |  64.8 |   32.2 |          45.2 |
-| ViLamr-Llama3-8B [[🤗 HF](https://huggingface.co/JingjingJiang/vilamr-llama3-8b)]   | Llama3.1-8B-Instruct | GateMixer [[🤗 HF](https://huggingface.co/JingjingJiang/vilamr-llama3-8b-pretrain)]  | <li> CLIP-L-336px <li> CLIP-ConvNeXt-XXLarge |   43.5 |     41.4 | 60.1 |    75.3 |   87.0 |  70.8 |   33.0 |          44.0 |
+| ViLamr Weights                                                                      | LLM                  | VL-Connector                                                                         | Vision Encoder                               | MMStar |   MMMU-v | RWQA |   MMB-d | GD-VCR | GeoQA | WeMath | M3CoT (ZS) |
+|:------------------------------------------------------------------------------------| :------------------- |:-------------------------------------------------------------------------------------|:---------------------------------------------|-------:|---------:|-----:|--------:|-------:|------:|-------:|-----------:|
+| ViLamr-Vicuna-13B [[🤗 HF](https://huggingface.co/JingjingJiang/vilamr-vicuna-13b)] | Vicuna-13b-v1.5      | GateMixer [[🤗 HF](https://huggingface.co/JingjingJiang/vilamr-vicuna-13b-pretrain)] | <li> CLIP-L-336px <li> CLIP-ConvNeXt-XXLarge |   43.0 |     42.3 | 62.2 |    76.0 |   87.9 |  64.8 |   32.2 |       45.2 |
+| ViLamr-Llama3-8B [[🤗 HF](https://huggingface.co/JingjingJiang/vilamr-llama3-8b)]   | Llama3.1-8B-Instruct | GateMixer [[🤗 HF](https://huggingface.co/JingjingJiang/vilamr-llama3-8b-pretrain)]  | <li> CLIP-L-336px <li> CLIP-ConvNeXt-XXLarge |   43.5 |     41.4 | 60.1 |    75.3 |   87.0 |  70.8 |   33.0 |       44.0 |
 
 ---
 
@@ -120,12 +124,13 @@ scripts/vilamr_vicuna_13b/finetune_base.sh
 > - [GD-VCR](https://gd-vcr.github.io/)
 > - [GeoQA](https://github.com/pipilurj/G-LLaVA)
 > - [WeMath](https://we-math.github.io/)
-> - [M$3$CoT](https://lightchen233.github.io/m3cot.github.io/index.html)
+> - [M3CoT](https://lightchen233.github.io/m3cot.github.io/index.html)
 
 - Multi-GPU inference
 
 ```bash
 scripts/vilamr_vicuna_13b/inference_base.sh
+scripts/vilamr_llama3_8b/inference_base.sh
 ```
 
 - Accuracy calculation
