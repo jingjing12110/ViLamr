@@ -2,8 +2,18 @@
 <h1>:hear_no_evil: ViLamr :hear_no_evil:</h1> 
 <h2>MLLMs towards Chain-of-Thought Reasoning</h2> 
 
-[//]: # (> [[Paper]&#40;&#41;] [[📝 Project Page]&#40;https://mm-vl.github.io/vilamr/&#41;] )
-> [[🤗 Data](https://huggingface.co/datasets/JingjingJiang/MCoT-Instruct-266K)] [[🤗 Model Zoo](https://huggingface.co/collections/JingjingJiang/vilamr-66d02b6b74809ac0b6b09675)]
+[//]: # ([[Paper]&#40;&#41;] )
+[//]: # ([[📝 Project Page]&#40;https://mm-vl.github.io/vilamr/&#41;] )
+[[🤗 Data](https://huggingface.co/datasets/JingjingJiang/MCoT-Instruct)] 
+[[🤗 Model Zoo](https://huggingface.co/collections/JingjingJiang/vilamr-66d02b6b74809ac0b6b09675)]
+</div>
+
+ViLamr bridges a hybrid visual encoder with an LLM via a meticulously designed connector, GateMixer, which mixes different visual features using a gate mechanism with selective attention and then maps them into language embedding space. 
+We train ViLamr using a two-stage strategy. (I) **Alignment Pretraining**: Training GateMixer on a subset of [ShareGPT4V-PT](https://sharegpt4v.github.io/) to achieve semantic alignment and connection between image and text.
+(II) **Multimodal CoT Instruction Tuning**: Training GateMixer and LLM on our **[MCoT-Instruct](https://huggingface.co/datasets/JingjingJiang/MCoT-Instruct-266K)** to enable ViLamr to perform chain-of-thought reasoning.
+
+<div align="center">
+<img style="max-width: 70%;" src="docs/images/vilamr.jpg" alt="Illustration"/>
 </div>
 
 
@@ -19,10 +29,15 @@
 > [!NOTE]
 > We provide the following trained weights of **ViLamr <mark>w/o RPE</mark>** for versatility:
 
-| ViLamr Weights                                                                      | LLM                  | Connector                                                                         | VE                                        | MMStar |   MMMU-v | RWQA |   MMB-d | GD-VCR | GeoQA | WeMath | M3CoT (ZS) |
-|:------------------------------------------------------------------------------------| :------------------- |:-------------------------------------------------------------------------------------|:------------------------------------------|-------:|---------:|-----:|--------:|-------:|------:|-------:|-----------:|
-| ViLamr-Vicuna-13B [[🤗 HF](https://huggingface.co/JingjingJiang/vilamr-vicuna-13b)] | Vicuna-13b-v1.5      | GateMixer [[🤗 HF](https://huggingface.co/JingjingJiang/vilamr-vicuna-13b-pretrain)] | <li> CLIP-ViT-L/14 <li> CLIP-ConvNeXt-XXL |   43.0 |     42.3 | 62.2 |    76.0 |   87.9 |  64.8 |   32.2 |       45.2 |
-| ViLamr-Llama3-8B [[🤗 HF](https://huggingface.co/JingjingJiang/vilamr-llama3-8b)]   | Llama3.1-8B-Instruct | GateMixer [[🤗 HF](https://huggingface.co/JingjingJiang/vilamr-llama3-8b-pretrain)]  | <li> CLIP-ViT-L/14 <li> CLIP-ConvNeXt-XXL  |   43.5 |     41.4 | 60.1 |    75.3 |   87.0 |  70.8 |   33.0 |       44.0 |
+| ViLamr                                                                              | LLM                  | Connector                                                                         | VE                                            |               SFT data |  
+|:------------------------------------------------------------------------------------| :------------------- |:-------------------------------------------------------------------------------------|:----------------------------------------------|-----------------------:|
+| ViLamr-Vicuna-13B [[🤗 HF](https://huggingface.co/JingjingJiang/vilamr-vicuna-13b)] | Vicuna-13b-v1.5      | GateMixer [[🤗 HF](https://huggingface.co/JingjingJiang/vilamr-vicuna-13b-pretrain)] | <li> CLIP-ViT-L/14 <li> CLIP-ConvNeXt-XXLarge | [MCoT-Instruct-266K](https://huggingface.co/datasets/JingjingJiang/MCoT-Instruct) |     
+| ViLamr-Llama3-8B [[🤗 HF](https://huggingface.co/JingjingJiang/vilamr-llama3-8b)]   | Llama3.1-8B-Instruct | GateMixer [[🤗 HF](https://huggingface.co/JingjingJiang/vilamr-llama3-8b-pretrain)]  | <li> CLIP-ViT-L/14 <li> CLIP-ConvNeXt-XXLarge     | [MCoT-Instruct-266K](https://huggingface.co/datasets/JingjingJiang/MCoT-Instruct) |
+
+| ViLamr                                                                             | MMStar |   MMMU-v | RWQA |   MMB-d | GD-VCR | GeoQA | WeMath | M3CoT (ZS) |
+|:-----------------------------------------------------------------------------------|-------:|---------:|-----:|--------:|-------:|------:|-------:|-----------:|
+| ViLamr-Vicuna-13B                                                                  |   43.0 |     42.3 | 62.2 |    76.0 |   87.9 |  64.8 |   32.2 |       45.2 |
+| ViLamr-Llama3-8B |   43.5 |     41.4 | 60.1 |    75.3 |   87.0 |  70.8 |   33.0 |       44.0 |
 
 ---
 
@@ -143,6 +158,4 @@ scripts/acc_calculate.sh
 
 [Vicuna](https://github.com/lm-sys/FastChat) | [Llama](https://github.com/lm-sys/FastChat) | [LLaVA](https://github.com/haotian-liu/LLaVA) | [LLaVA-NeXT](https://github.com/LLaVA-VL/LLaVA-NeXT) | [ShareGPT4V](https://github.com/ShareGPT4Omni/ShareGPT4V) | [LLaVA-MORE](https://github.com/aimagelab/LLaVA-MORE)
 
-[//]: #
-[//]: #
 
