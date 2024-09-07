@@ -10,7 +10,7 @@
 
 ViLamr bridges a hybrid visual encoder with an LLM via a meticulously designed connector, **GateMixer**, which mixes different visual features using a gate mechanism with selective attention and then maps them into language embedding space. 
 We train ViLamr using a two-stage strategy. (I) **Alignment Pretraining**: Training GateMixer on a subset of [ShareGPT4V-PT](https://sharegpt4v.github.io/) to achieve semantic alignment and connection between image and text.
-(II) **Multimodal CoT Instruction Tuning**: Training GateMixer and LLM on our **[MCoT-Instruct](https://huggingface.co/datasets/JingjingJiang/MCoT-Instruct-266K)** to enable ViLamr to perform chain-of-thought reasoning.
+(II) **Multimodal CoT Instruction Tuning**: Training GateMixer and LLM on our **[MCoT-Instruct](https://huggingface.co/datasets/JingjingJiang/MCoT-Instruct)** to enable ViLamr to perform chain-of-thought reasoning.
 
 <div align="center">
 <img width="80%" height="80%" src="docs/images/vilamr.jpg" alt="Illustration"/>
