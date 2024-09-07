@@ -8,12 +8,12 @@
 [[🤗 Model Zoo](https://huggingface.co/collections/JingjingJiang/vilamr-66d02b6b74809ac0b6b09675)]
 </div>
 
-ViLamr bridges a hybrid visual encoder with an LLM via a meticulously designed connector, GateMixer, which mixes different visual features using a gate mechanism with selective attention and then maps them into language embedding space. 
+ViLamr bridges a hybrid visual encoder with an LLM via a meticulously designed connector, **GateMixer**, which mixes different visual features using a gate mechanism with selective attention and then maps them into language embedding space. 
 We train ViLamr using a two-stage strategy. (I) **Alignment Pretraining**: Training GateMixer on a subset of [ShareGPT4V-PT](https://sharegpt4v.github.io/) to achieve semantic alignment and connection between image and text.
 (II) **Multimodal CoT Instruction Tuning**: Training GateMixer and LLM on our **[MCoT-Instruct](https://huggingface.co/datasets/JingjingJiang/MCoT-Instruct-266K)** to enable ViLamr to perform chain-of-thought reasoning.
 
 <div align="center">
-<img style="max-width: 70%;" src="docs/images/vilamr.jpg" alt="Illustration"/>
+<img width="80%" height="80%" src="docs/images/vilamr.jpg" alt="Illustration"/>
 </div>
 
 
@@ -31,8 +31,8 @@ We train ViLamr using a two-stage strategy. (I) **Alignment Pretraining**: Train
 
 | ViLamr                                                                              | LLM                  | Connector                                                                         | VE                                            |               SFT data |  
 |:------------------------------------------------------------------------------------| :------------------- |:-------------------------------------------------------------------------------------|:----------------------------------------------|-----------------------:|
-| ViLamr-Vicuna-13B [[🤗 HF](https://huggingface.co/JingjingJiang/vilamr-vicuna-13b)] | Vicuna-13b-v1.5      | GateMixer [[🤗 HF](https://huggingface.co/JingjingJiang/vilamr-vicuna-13b-pretrain)] | <li> CLIP-ViT-L/14 <li> CLIP-ConvNeXt-XXLarge | [MCoT-Instruct-266K](https://huggingface.co/datasets/JingjingJiang/MCoT-Instruct) |     
-| ViLamr-Llama3-8B [[🤗 HF](https://huggingface.co/JingjingJiang/vilamr-llama3-8b)]   | Llama3.1-8B-Instruct | GateMixer [[🤗 HF](https://huggingface.co/JingjingJiang/vilamr-llama3-8b-pretrain)]  | <li> CLIP-ViT-L/14 <li> CLIP-ConvNeXt-XXLarge     | [MCoT-Instruct-266K](https://huggingface.co/datasets/JingjingJiang/MCoT-Instruct) |
+| ViLamr-Vicuna-13B [[🤗 HF](https://huggingface.co/JingjingJiang/vilamr-vicuna-13b)] | Vicuna-13b-v1.5      | GateMixer [[🤗 HF](https://huggingface.co/JingjingJiang/vilamr-vicuna-13b-pretrain)] | <li> CLIP-ViT-L/14 <li> CLIP-ConvNeXt-XXL | [MCoT-Instruct-266K](https://huggingface.co/datasets/JingjingJiang/MCoT-Instruct) |     
+| ViLamr-Llama3-8B [[🤗 HF](https://huggingface.co/JingjingJiang/vilamr-llama3-8b)]   | Llama3.1-8B-Instruct | GateMixer [[🤗 HF](https://huggingface.co/JingjingJiang/vilamr-llama3-8b-pretrain)]  | <li> CLIP-ViT-L/14 <li> CLIP-ConvNeXt-XXL | [MCoT-Instruct-266K](https://huggingface.co/datasets/JingjingJiang/MCoT-Instruct) |
 
 | ViLamr                                                                             | MMStar |   MMMU-v | RWQA |   MMB-d | GD-VCR | GeoQA | WeMath | M3CoT (ZS) |
 |:-----------------------------------------------------------------------------------|-------:|---------:|-----:|--------:|-------:|------:|-------:|-----------:|
