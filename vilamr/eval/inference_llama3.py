@@ -161,9 +161,11 @@ def main(args):
         print(args.answers_file)
 
         response_format_prompt = CoT_Formatting_Prompts[cot_prompt_type]
-        print(f"\033[40;32mCoTP Type <{cot_prompt_type}>: {response_format_prompt}\033[0m")
+        print(
+            f"\033[40;32mCoTP Type <{cot_prompt_type}>: {response_format_prompt}\033[0m")
 
-        model_inference(args, model, tokenizer, image_processor, model_name, response_format_prompt)
+        model_inference(args, model, tokenizer, image_processor, model_name,
+                        response_format_prompt)
 
 
 if __name__ == "__main__":
