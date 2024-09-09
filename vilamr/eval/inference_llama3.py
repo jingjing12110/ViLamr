@@ -21,16 +21,13 @@ from vilamr.utils import load_json, load_jsonl, str2bool
 local_rank = None
 
 EVAL_TASK_FILES = {
-    "pca": "playground/data/vilamr_eval/pca_bench/test.json",
     "rwqa": "playground/data/vilamr_eval/rwqa/test.json",
     "mmmu": "playground/data/vilamr_eval/mmmu/val.json",
     "mmstar": "playground/data/vilamr_eval/mmstar/test.json",
     "mmb_dev": "playground/data/vilamr_eval/mm_bench/dev_en.json",
     "mmb_test": "playground/data/vilamr_eval/mm_bench/dev_en.json",
     "geoqa": "playground/data/vilamr_eval/geoqa/test.json",
-    "sqa_img": "playground/data/vilamr_eval/sqa_img/test_img.json",
     "gd_vcr": "playground/data/vilamr_eval/gd_vcr/val.json",
-    "vcr": "playground/data/vilamr_eval/vcr/val.json",
     "m3cot": "playground/data/vilamr_eval/m3cot/test.json",
     "wemath": "playground/data/vilamr_eval/wemath/testmini.json",
 }
